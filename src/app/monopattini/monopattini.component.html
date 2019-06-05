@@ -1,0 +1,27 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<div *ngIf="cliccatoGuasto" class="text-center">
+    <div class = "row">
+        <div class= "col-sm-6">
+            <input (click)="inizioNoleggio()" style="padding:7px 15px 7px 15px; font-size:15px" #inizio *ngIf="inizio" type="submit" class="btn btn-success" value="Inizia Noleggio"/>
+            <input (click)="fineNoleggio()" style="padding:7px 15px 7px 15px; font-size:15px" #fine *ngIf="fine"  type="submit" class="btn btn-danger" value="Fine Noleggio"/>
+        </div>
+        <div class= "col-sm-6">
+          <input (click)="open()" style="padding:7px 15px 7px 15px; font-size:15px" *ngIf="iniziato" type="submit" class="btn btn-danger" value="Guasto"/>
+        </div>
+    </div><br>
+    <p><b>{{err}}</b></p>
+
+  <br>
+</div>
+<div *ngIf="segnalareGuasto" class="text-center">
+  <form>
+    <div>
+      <label>Segnala un guasto:</label>
+      <textarea class="form-control" rows="5" #problema></textarea><br><br>
+    </div>
+    <input type="submit" style="padding:7px 20px 7px 20px; font-size:15px" class="btn btn-success" (click)="segnala(problema.value)" value="Segnala"/>
+    <input type="submit" style="padding:7px 20px 7px 20px; font-size:15px" class="btn btn-danger" (click)="close()" value="Annulla"/>
+  </form>
+</div>
+

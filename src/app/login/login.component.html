@@ -1,0 +1,74 @@
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<div class="container" *ngIf="visible">
+  <div class="login-form">
+      <h2>Accedi al tuo account MonoRent!</h2>
+      <form>
+          <div class="text-center">
+              <img src="https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png" class="img-circle avatar" alt="Avatar">
+          </div>
+          <div class="form-group">
+              <input #username type="text" class="form-control" placeholder="Username" value="" class="input" class="form-control" name="username" required/>
+              <input #password type="password" class="form-control" placeholder="Password" value="" class="input" class="form-control" name="password" required/>
+
+          </div>
+          <p class="text-center"><font color="#e60000">{{err}}</font></p>
+          <div class="form-group">
+              <input (click)= "onClick(username.value,password.value)" type="submit" value="Accedi" class="btn btn-primary btn-block"/>
+          </div>
+      </form>
+      <p (click)= "onVedi()" class="text-center"><a [routerLink]="['/register']">Crea un Account</a></p>
+  </div>
+</div>
+
+
+
+-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Login</h3>
+
+                        <div class="form-group">
+                            <input #username type="text" class="form-control" placeholder="Username" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input #password type="password" class="form-control" placeholder="Password" value="" />
+                        </div>
+                        <div class="form-group">
+                            <button (click)= "login(username.value,password.value)"  class="btnSubmit-1" >Login</button>
+                        </div>
+                        <p class="text-center">>{{err}}</p>
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <div class="login-logo">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                    </div>
+                    <h3>Registrazione</h3>
+                        <div class="form-group">
+                            <input #username1 type="text" class="form-control" placeholder="Username"  />
+                        </div>
+                        <div class="form-group">
+                            <input #password1 type="text" class="form-control" placeholder="Password"  />
+                        </div>
+                        <div class="form-group">
+                            <input (click)= "registra(username1.value,password1.value)" type="submit" class="btnSubmit-2" value="Registra" />
+                        </div>
+                </div>
+            </div>
+      </div>
