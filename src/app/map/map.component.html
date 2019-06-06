@@ -7,7 +7,7 @@
     <agm-marker *ngFor="let data of monoPa" [latitude]="data.lat" [longitude]="data.long" [iconUrl]="icon" >
         <agm-info-window [maxWidth]="270">
             <p>ID monopattino: <b><h3>{{data._id}}</h3></b></p>
-            <app-monopattini></app-monopattini>
+            <app-monopattini [idMonopattino] = "data._id"></app-monopattini>
         </agm-info-window>
     </agm-marker>
 </agm-map>

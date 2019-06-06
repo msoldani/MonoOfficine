@@ -15,7 +15,6 @@ import { Guasto } from './guasto.model';
 })
 export class MonopattiniComponent implements OnInit {
  inizio: boolean = true;
-  @Input() _id:string;
  iniziato: boolean = true;
   fine: boolean = false;
   data: Object;
@@ -26,6 +25,7 @@ export class MonopattiniComponent implements OnInit {
   guaSto: Array<Guasto> = new Array();
   user:string;
   userId:string;
+  @Input() idMonopattino: string;
   dataInizio: string;
   oraInizio:string;
   oraGuasto:string;
@@ -45,6 +45,7 @@ export class MonopattiniComponent implements OnInit {
   constructor(public http: HttpClient) {
       this.user = localStorage.getItem('username');
       this.userId = localStorage.getItem('idUser');
+
 
   }
   ngOnInit() {
@@ -103,6 +104,7 @@ export class MonopattiniComponent implements OnInit {
      this.user = localStorage.getItem('username');
 
      let dati: Noleggio = new Noleggio();
+     dati.idMonopattino = this.idMonopattino;
      dati.username = this.user;
      dati.dataInizio = this.dataInizio;
      dati.oraInizio = this.oraInizio;
@@ -120,7 +122,7 @@ export class MonopattiniComponent implements OnInit {
    Noleggio(dati: Noleggio): void {
         console.log(dati.username);
 
-     this.http.post('https://3000-e2613c08-eafa-4064-b000-c5cacf8d7c4c.ws-eu0.gitpod.io/noleggio', {User:dati.username,dataIn:dati.dataInizio, oraIn:dati.oraInizio, dataFi:dati.dataFine, oraFi:dati.oraFine})
+     this.http.post('https://3000-e2613c08-eafa-4064-b000-c5cacf8d7c4c.ws-eu0.gitpod.io/noleggio', {User:dati.username,idMonopattino: dati.idMonopattino, dataIn:dati.dataInizio, oraIn:dati.oraInizio, dataFi:dati.dataFine, oraFi:dati.oraFine})
       .subscribe(data => {
         this.data = data;
         console.log(this.data);
@@ -140,7 +142,7 @@ export class MonopattiniComponent implements OnInit {
 
 
         let dati: Guasto = new Guasto();
-        dati.idMonopattino = this._id;
+        dati.idMonopattino = this.idMonopattino;
         dati.idUser = this.userId;
         dati.problema = problema;
         dati.oraSegnalazione = this.oraGuasto;

@@ -19,7 +19,7 @@
                   <a [routerLink]="['/map']" class="nav-item nav-link"><b>Mappa</b></a>
               </div>
               <form class="form-inline ml-auto dropdown">
-                  Benvenuto <b>{{this.user}}</b>&nbsp; &nbsp;&nbsp;<img style="max-width:40px;" src="https://pngimage.net/wp-content/uploads/2018/06/profilo-png-2.png">
+                  Username: <b>{{this.user}}</b>&nbsp; &nbsp;&nbsp;<img style="max-width:40px;" src="https://pngimage.net/wp-content/uploads/2018/06/profilo-png-2.png">
                     <div *ngIf= "vuoto" class="dropdown-content">
                         <a [routerLink]="['/login']">Login</a>
                     </div>
